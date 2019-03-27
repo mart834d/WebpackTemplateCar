@@ -1,8 +1,6 @@
 import { ICar } from "./ICar";
 import axios, { AxiosError, AxiosResponse, AxiosRequestConfig } from "../../node_modules/axios/index"
-
-
-
+// interfaces
 let ContentElement: HTMLDivElement = <HTMLDivElement>document.getElementById("content");
 
 
@@ -11,13 +9,16 @@ function getAllCars():void {
 
         .then(function (Response: AxiosResponse<ICar[]>): void{
             console.log(Response);
+            
         })
         .catch(function (error: AxiosError): void{
+            console.log("error")
             console.log(error);
     })
         
     
-
+    console.log("Er i slutningen af then")
 }
+
 
 getAllCars();
